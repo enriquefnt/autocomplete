@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS Autocomplete</title>
+
+    <!-- AUTOCOMPLETE JS + CSS -->
+    <script src="autocomplete.js"></script>
+    <link rel="stylesheet" href="autocomplete.css">
+  </head>
+  <body>
+    <!-- (A) AUTOCOMPLETE MULTIPLE FIELDS -->
+    Name: <input type="text" id="demoC"/><br>
+    Email: <input type="email" id="dEmail"/><br>
+    Age: <input type="text" id="dAge"/>
+
+    <script>
+    // (B) ATTACH AUTOCOMPLETE
+    ac.attach({
+      // (B1) USE AN ARRAY OF OBJECTS AS SUGGESTIONS
+      target: document.getElementById("demoC"),
+      data: [
+        {D: "Aaronn", dEmail: "aaronn@doe.com", dAge: 27 },
+        {D: "Baattyy", dEmail: "baattyy@doe.com", dAge: 37 },
+        {D: "Chaarles", dEmail: "chaarles@doe.com", dAge: 47 },
+        {D: "Dionn", dEmail: "dionn@doe.com", dAge: 57 },
+        {D: "Elly", dEmail: "elly@doe.com", dAge: 18 }
+      ],
+      
+      // (B2) OPTIONAL, DO THIS ON SELECT
+      select : (val, multi) => {
+        console.log(val); // selected value
+        console.log(multi); // attached multiple values
+      }
+    });
+    </script>
+  </body>
+</html>

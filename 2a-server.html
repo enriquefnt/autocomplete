@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS Autocomplete</title>
+
+    <!-- AUTOCOMPLETE JS + CSS -->
+    <script src="autocomplete.js"></script>
+    <link rel="stylesheet" href="autocomplete.css">
+  </head>
+  <body>
+    <!-- (A) INPUT FIELD -->
+    <input type="text" id="demoB"/>
+
+    <script>
+    // (B) ATTACH AUTOCOMPLETE TO INPUT FIELD
+    ac.attach({
+      // (B1) REQUIRED - TARGET FIELD + URL
+      target: document.getElementById("demoB"),
+      data: "2b-search.php",
+
+      // (B2) OPTIONAL - ADDITIONAL POST DATA
+      post: {
+        keyA: "valueA",
+        keyB: "valueB"
+      },
+      
+      // (B3) OPTIONAL - DELAY + MIN CHARACTERS
+      delay: 1000,
+      min: 2
+    });
+    </script>
+  </body>
+</html>
